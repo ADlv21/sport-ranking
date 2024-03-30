@@ -1,0 +1,5 @@
+fastapi[all]
+uvicorn[standard]
+requests
+python-dotenv
+Flask-Cors
