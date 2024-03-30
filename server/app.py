@@ -3,6 +3,8 @@ import requests
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from utils.api import *
+from routes.cricket import cricket_router
+
 
 origins = [
     "http://localhost",
@@ -12,6 +14,7 @@ origins = [
 ]
 
 app = FastAPI()
+app.include_router(cricket_router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -25,56 +28,6 @@ app.add_middleware(
 def cricket():
     return {'Hello' : 'World'}
 
-@app.get("/cricket-allrounder-odi")
-def cricket():
-    response = requests.get(ODI_ALLROUNDER_CRICKET_URL)
-    data = response.json()['data']['bat-rank']['rank']
-    
-    new_data = []
-    for item in data:
-        new_item = {
-            "name": item["Player-name"],
-            "change": item["change"],
-            "nationality": item["Country_name"],
-            "rank": item["no"]
-        }
-        new_data.append(new_item)
-    
-    return new_data
-
-@app.get("/cricket-allrounder-test")
-def cricket():
-    response = requests.get(TEST_ALLROUNDER_CRICKET_URL)
-    data = response.json()['data']['bat-rank']['rank']
-    
-    new_data = []
-    for item in data:
-        new_item = {
-            "name": item["Player-name"],
-            "change": item["change"],
-            "nationality": item["Country_name"],
-            "rank": item["no"]
-        }
-        new_data.append(new_item)
-    
-    return new_data
-
-@app.get("/cricket-allrounder-t20")
-def cricket():
-    response = requests.get(T20_ALLROUNDER_CRICKET_URL)
-    data = response.json()['data']['bat-rank']['rank']
-    new_data = []
-    for item in data:
-        new_item = {
-            "name": item["Player-name"],
-            "change": item["change"],
-            "nationality": item["Country_name"],
-            "rank": item["no"]
-        }
-        new_data.append(new_item)
-    
-    return new_data
-    
 
 @app.get("/football")
 def football():
