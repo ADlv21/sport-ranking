@@ -9,8 +9,8 @@ from routes.cricket import cricket_router
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "http://localhost:8080",
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "*"
 ]
 
 app = FastAPI()
