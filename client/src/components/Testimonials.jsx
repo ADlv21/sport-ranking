@@ -22,8 +22,8 @@ const Testimonials = () => {
                         </div>
                         <div>
                             <p className="text-gray-600 mb-4">
-                                "I absolutely love using this app. It has transformed
-                                the way I work."
+                                &quot;I absolutely love using this app. It has transformed
+                                the way I work.&quot;
                             </p>
                             <h4 className="text-gray-900 font-bold">
                                 John Doe
@@ -43,8 +43,8 @@ const Testimonials = () => {
                         </div>
                         <div>
                             <p className="text-gray-600 mb-4">
-                                "This app has been a game-changer for my business.
-                                Highly recommended!"
+                                &quot;This app has been a game-changer for my business.
+                                Highly recommended!&quot;
                             </p>
                             <h4 className="text-gray-900 font-bold">
                                 Jane Smith
