@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import heroImage from '@/assets/hero.webp';
+import { APP_NAME } from '@/lib/constants';
 
 const Hero = () => {
     return (
@@ -8,12 +9,14 @@ const Hero = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center">
                 <div className="md:w-1/2 space-y-6">
                     <h1 className="text-4xl font-bold text-white">
-                        Welcome to Your App
+                        Welcome to {APP_NAME}
                     </h1>
                     <p className="text-lg text-gray-400">
-                        Discover the power of our app and transform the way you work.
+                        Discover the pinnacle of athletic prowess as we unveil the elite ranks of the sporting world's finest. From the lightning-fast agility of soccer stars to the strategic brilliance of chess grandmasters, we celebrate the champions who redefine the limits of human achievement.
                     </p>
-                    <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md">
+                    <button
+                        onClick={() => { window.location = '/sports' }}
+                        className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md">
                         Get Started
                     </button>
                 </div>
