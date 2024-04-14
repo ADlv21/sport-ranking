@@ -12,3 +12,4 @@ ODI_ALLROUNDER_CRICKET_URL = 'https://assets-icc.sportz.io/cricket/v1/ranking?cl
 
 FOOTBALL_URL = 'https://interactive.guim.co.uk/docsdata/1J14FwwSaUlGs4M90Jj526ZB7uraCt_VMOgBIJVTKpNI.json'
 
+CHESS_URL = 'https://api.chessratings.top/api/v1/ratings/?format=json&c=&p=2024-01-01&r=0&s=A&offset=0&t=all&u=all&by=all&limit=200'

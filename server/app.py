@@ -1,17 +1,13 @@
 import uvicorn
-import requests
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from utils.api import *
+from utils.data.football import FOOTBALL
+from utils.data.chess import CHESS_DATA
 from routes.cricket import cricket_router
 
 
-origins = [
-    "http://localhost",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "*"
-]
+origins = ["*"]
 
 app = FastAPI()
 app.include_router(cricket_router)
@@ -20,7 +16,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -31,20 +27,24 @@ def cricket():
 
 @app.get("/football")
 def football():
-    response = requests.get(FOOTBALL_URL)
-    data = response.json()['sheets']['players']
-    new_data = []
     
-    for item in data:
-        new_item = {
-            "name": item["Name"],
-            "change": item["Up or down"],
-            "nationality": item["Nationality"],
-            "rank": item["Rank"]
-        }
-        new_data.append(new_item)
+    return FOOTBALL
+
+@app.get("/chess")
+def football():
     
-    return new_data
+    data = CHESS_DATA.get('results')
+    newData = []
+    
+    for index, item in enumerate(data):
+        player = {}
+        player['name'] = item['fullname']
+        player['nationality'] = item['country_abbr']
+        player['rank'] = str(index+1)
+        player['change'] = "0"
+        newData.append(player)
+
+    return newData
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
