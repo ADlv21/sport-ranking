@@ -12,7 +12,7 @@ const Hero = () => {
                         Welcome to {APP_NAME}
                     </h1>
                     <p className="text-lg text-gray-400">
-                        Discover the pinnacle of athletic prowess as we unveil the elite ranks of the sporting world's finest. From the lightning-fast agility of soccer stars to the strategic brilliance of chess grandmasters, we celebrate the champions who redefine the limits of human achievement.
+                        Discover the pinnacle of athletic prowess as we unveil the elite ranks of the sporting world&apos;s finest. From the lightning-fast agility of soccer stars to the strategic brilliance of chess grandmasters, we celebrate the champions who redefine the limits of human achievement.
                     </p>
                     <button
                         onClick={() => { window.location = '/sports' }}
