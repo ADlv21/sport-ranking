@@ -13,6 +13,7 @@ const Navbar = () => {
                             <Image
                                 src={AppIcon}
                                 className='w-14 rounded-full'
+                                alt='appicon'
                             />
                             <span>{APP_NAME}</span>
                         </Link>

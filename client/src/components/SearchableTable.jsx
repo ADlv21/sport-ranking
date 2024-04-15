@@ -33,9 +33,9 @@ const SearchableTable = ({ data, columns }) => {
                 </thead>
                 <tbody>
                     {filteredData.map(item => (
-                        <tr key={item.id} className="hover:bg-blue-100 transition-colors duration-300">
+                        <tr key={item.rank} className="hover:bg-blue-100 transition-colors duration-300">
                             {columns.map(column => (
-                                <td key={`${item.id}-${column.key}`} className="px-6 py-4">
+                                < td key={`${item.id}-${column.key}`} className="px-6 py-4">
                                     {item[column.key]}
                                 </td>
                             ))}
@@ -43,7 +43,7 @@ const SearchableTable = ({ data, columns }) => {
                     ))}
                 </tbody>
             </table>
-        </div>
+        </div >
     );
 };
 

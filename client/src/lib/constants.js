@@ -1,6 +1,9 @@
 export const APP_NAME = "SportsBug";
 
-export const API_URL = "http://127.0.0.1:8000";
+export const API_URL = "http://0.0.0.0:8000";
+
+export const CLASSMATE_API =
+  "https://34kremxbzd.execute-api.us-east-1.amazonaws.com/dev/levelcheck?hobby=";
 
 export const cricketurls = {
   cricket_allrounder_odi: "/cricket-allrounder-odi",
@@ -15,42 +18,78 @@ export const cricketurls = {
 };
 
 export const chessurl = "/chess";
-
 export const footballurl = "/football";
+export const swimmingurl = "/swimming";
 
 export const sports = [
   {
+    value: chessurl,
+    label: "Chess",
+    api: "cricket",
+  },
+  {
+    value: swimmingurl,
+    label: "Swimming",
+    api: "swimming",
+  },
+  {
+    value: footballurl,
+    label: "Football",
+    api: "cricket",
+  },
+  {
     value: cricketurls.cricket_allrounder_odi,
     label: "Cricket All Rounder ODI",
+    api: "cricket",
   },
   {
     value: cricketurls.cricket_allrounder_test,
     label: "Cricket All Rounder Test",
+    api: "cricket",
   },
   {
     value: cricketurls.cricket_allrounder_t20,
     label: "Cricket All Rounder T20",
-  },
-  { value: cricketurls.cricket_bowl_odi, label: "Cricket Bowler ODI" },
-  { value: cricketurls.cricket_bowl_test, label: "Cricket Bowler Test" },
-  { value: cricketurls.cricket_bowl_t20, label: "Cricket Bowler T20" },
-  { value: cricketurls.cricket_bat_odi, label: "Cricket Batsman ODI" },
-  { value: cricketurls.cricket_bat_test, label: "Cricket Batsman Test" },
-  { value: cricketurls.cricket_bat_t20, label: "Cricket Batsman T20" },
-  {
-    value: footballurl,
-    label: "Football",
+    api: "cricket",
   },
   {
-    value: chessurl,
-    label: "Chess",
+    value: cricketurls.cricket_bowl_odi,
+    label: "Cricket Bowler ODI",
+    api: "cricket",
+  },
+  {
+    value: cricketurls.cricket_bowl_test,
+    label: "Cricket Bowler Test",
+    api: "cricket",
+  },
+  {
+    value: cricketurls.cricket_bowl_t20,
+    label: "Cricket Bowler T20",
+    api: "cricket",
+  },
+  {
+    value: cricketurls.cricket_bat_odi,
+    label: "Cricket Batsman ODI",
+    api: "cricket",
+  },
+  {
+    value: cricketurls.cricket_bat_test,
+    label: "Cricket Batsman Test",
+    api: "cricket",
+  },
+  {
+    value: cricketurls.cricket_bat_t20,
+    label: "Cricket Batsman T20",
+    api: "cricket",
   },
   {
     value: "badminton",
     label: "Badminton",
+    api: "cricket",
   },
   {
     value: "swimming",
     label: "Swimming",
+    api: "cricket",
   },
 ];

@@ -9,7 +9,7 @@ import { useToast } from "@/components/ui/use-toast"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import axios from "axios"
-import { API_URL } from "@/lib/constants"
+import { API_URL, CLASSMATE_API } from "@/lib/constants"
 import SearchableTable from "./SearchableTable"
 
 
@@ -93,7 +93,7 @@ const SportSelect = ({ sports, value, setValue }) => {
                         fetchData(value);
                         toast({
                             title: "Results fetching...",
-                            description: `Results for ${value} is being fetched`,
+                            description: `Results for ${value.slice(1)} is being fetched`,
                             action: (
                                 <ToastAction altText="Goto schedule to undo">Close</ToastAction>
                             ),

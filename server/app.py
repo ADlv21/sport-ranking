@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
 from utils.api import *
+from utils.data.swimming import SWIMMING_DATA
 from utils.data.football import FOOTBALL
 from utils.data.chess import CHESS_DATA
 from routes.cricket import cricket_router
@@ -31,6 +32,11 @@ def cricket():
 def football():
     
     return FOOTBALL
+
+@app.get("/swimming")
+def football():
+    
+    return SWIMMING_DATA
 
 @app.get("/chess")
 def football():
